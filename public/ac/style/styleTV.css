@@ -1,0 +1,148 @@
+:root {
+    --clr: #151519;
+}
+
+body {
+    margin: 0;
+
+    background: var(--clr);
+}
+
+.iconTV {
+    background: transparent;
+    border: none;
+    display: grid;
+}
+
+.containerTV {
+
+    margin-top: 10px;
+    border-radius: 30px;
+    height: 700px;
+    width: 370px;
+}
+
+div.menu-grid-no {
+    box-shadow: 2px 2px 12px 1px rgba(0, 255, 0, 1);
+    margin-top: 10%;
+    background: #d9d9d9;
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+div.menu-grid-no>div {
+    padding: 10px 45px;
+    background: #d9d9d9;
+    border-top: 0.5px solid #29fd53;
+    border-bottom: 0.5px solid #29fd53;
+    border-right: 1px solid #29fd53;
+}
+
+button {
+    background: transparent;
+    border: none;
+}
+
+span .buttonNO {
+    font-size: 20px;
+    color: #151519;
+}
+
+.buttonNO:hover {
+    border-radius: 5px;
+    background-color: #a1a1a1;
+    color: #000;
+}
+
+.buttonNO:active {
+    background-color: #ffffff;
+    box-shadow: 2 2px #00ff00;
+    transform: translateY(2px);
+    color: #000;
+}
+
+div.menu-grid-iconTV {
+    box-shadow: 2px 2px 12px 1px rgba(0, 255, 0, 1);
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+div.menu-grid-iconTV>div {
+    padding: 10px 30px;
+}
+
+.buttonpw-icon:hover {
+    border-radius: 5px;
+    background-color: #00ff00;
+    color: #000;
+}
+
+.buttonpw-icon:active {
+    background-color: #ffffff;
+    box-shadow: 2 2px #00ff00;
+    transform: translateY(2px);
+    color: #000;
+}
+
+.button-icon:hover {
+    border-radius: 5px;
+    background-color: #a1a1a1;
+    color: #000;
+}
+
+.button-icon:active {
+    background-color: #ffffff;
+    box-shadow: 2 2px #00ff00;
+    transform: translateY(2px);
+    color: #000;
+}
+
+span.label {
+    font-size: 12px;
+    color: #d9d9d9;
+}
+
+.label-CV {
+    color: #151519;
+}
+
+div.menu-grid-iconTV>div>button {
+    color: #d9d9d9;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+div.menu-grid-iconTV>div>button.active {
+    color: #29fd53;
+}
+
+div.rounded-bg {
+    background: #d9d9d9;
+    border-radius: 50px;
+}
+
+div.grey-bg {
+    background: #d9d9d9;
+    border-radius: 50%;
+}
+
+i.home-iconTV {
+    font-size: 24px;
+    color: #a1a1a1;
+}
+
+i.control-iconTV {
+    font-size: 24px;
+    color: #2e2e2e;
+}
+
+
+
+@media only screen and (max-width: 400px) {
+    .containerTV {
+        margin-left: 25px;
+    }
+}

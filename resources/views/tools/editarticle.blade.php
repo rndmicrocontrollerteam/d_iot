@@ -37,7 +37,7 @@
                                    {{ $percategory->id == $wherecategory->id ? 'selected' : '' }}>
                                    {{ $percategory->name }}
                                </option> @endforeach
-                                    @endforeach
+                            @endforeach
                         </select>
 
                     </div>

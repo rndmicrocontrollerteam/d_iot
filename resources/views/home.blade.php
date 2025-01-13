@@ -9,7 +9,7 @@
                              @foreach ($articleall as $article)
                                  @if ($article->article_type_id != 2)
                                      <a href="{{ '/article/' . $article->slug }}">
-                                         <div class="articlecard w-full h-full bg-slate-200/40 dark:bg-slate-800 dark:border-[1.2px] dark:border-slate-600 shadow-lg hover:scale-105 hover:shadow-2xl duration-300 rounded-lg p-2 md:w-[90%] lg:w-[31%] relative mb-2 overflow-hidden"
+                                         <div class="articlecard w-full h-full bg-slate-200/60 dark:bg-slate-800 dark:border-[1.2px] dark:border-slate-600 shadow-lg hover:scale-105 hover:shadow-2xl duration-300 rounded-lg p-2 md:w-[90%] lg:w-[31%] relative mb-2 overflow-hidden"
                                              id="article">
                                              <div class="picture w-full h-[10rem] rounded-2xl overflow-hidden ">
                                                  <img src="{{ asset('storage/thumbnail/' . $article->images) }}"
@@ -55,7 +55,7 @@
                          @else
                              @foreach ($articleall as $article)
                                  <a href="{{ '/article/' . $article->slug }}">
-                                     <div class="articlecard w-full h-full bg-slate-200/50 dark:bg-slate-800 dark:border-[1.2px] dark:border-slate-600 shadow-lg hover:scale-105 hover:shadow-2xl duration-300 rounded-lg p-2 md:w-[90%] lg:w-[31%] relative mb-2 overflow-hidden"
+                                     <div class="articlecard w-full h-full bg-slate-200/60 dark:bg-slate-800 dark:border-[1.2px] dark:border-slate-600 shadow-lg hover:scale-105 hover:shadow-2xl duration-300 rounded-lg p-2 md:w-[90%] lg:w-[31%] relative mb-2 overflow-hidden"
                                          id="article">
                                          <div class="picture w-full h-[10rem] rounded-2xl overflow-hidden ">
                                              <img src="{{ asset('storage/thumbnail/' . $article->images) }}" loading="lazy"

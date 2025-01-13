@@ -386,6 +386,18 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{ route('admin.login') }}"
+                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor"
+                                class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" />
+                            </svg>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Login as Super Admin</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="/dashboard"
                             class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                             <svg aria-hidden="true"
@@ -408,8 +420,13 @@
                     class="font-bold text-xl dark:text-slate-300 bg-gradient-to-r text-white from-cyan-500 to-blue-500 rounded-l-full rounded-r-full">
                     <a href="{{ route('admindetails', Auth::user()->slug) }}" class="flex items-center">
                         <div class="profile-picture w-8 h-8 overflow-hidden rounded-full">
-                            <img src="{{ asset('storage/userprofile/' . Auth::user()->user_profile) }}"
-                                alt="" class="w-full h-full object-cover">
+                            @if (!Auth::user()->user_profile)
+                                <img src="https://doimages.nyc3.digitaloceanspaces.com/46f22fba-7718-478b-86ae-e8b875f0473e_default-avatar.jpeg"
+                                    alt="" class="object-cover w-full h-full">
+                            @else
+                                <img src="{{ asset('storage/userprofile/' . Auth::user()->user_profile) }}"
+                                    alt="" class="object-cover w-full h-full">
+                            @endif
                         </div>
                         <span class="px-2 py-[1px] rounded-md dark:text-blue-900">
                             {{ Auth::user()->name }}
@@ -462,12 +479,12 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($article as $perarticle)
+                                                @foreach ($article as $key => $perarticle)
                                                     <tr
                                                         class="bg-white dark:bg-slate-600 border-b text-gray-900  dark:text-slate-200 transition duration-300 ease-in-out hover:bg-gray-100">
                                                         <td
                                                             class="text-center align-middle px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                                            {{ $perarticle->id }}
+                                                            {{ $key + 1 }}.
                                                         </td>
                                                         <td class="text-sm text-center align-middle flex gap-2 items-center cursor-pointer font-light px-6 py-4 whitespace-nowrap"
                                                             title="{{ $perarticle->title }}">
@@ -516,22 +533,19 @@
                                                                 @method('DELETE')
                                                                 @csrf
                                                                 <button type="submit" id="confirmdeletebtn"><span
-                                                                        class="material-symbols-outlined text-red-600 dark:text-slate-900">
+                                                                        class="material-symbols-outlined text-red-600 dark:text-red-900">
                                                                         delete
                                                                     </span></button>
                                                             </form>
 
                                                             <a
-                                                                href="{{ 'article/' . encrypt($perarticle->id) . '/edit' }}"><span
-                                                                    class="material-symbols-outlined text-yellow-600 dark:text-slate-900 hover:opacity-80">
-                                                                    edit
-                                                                </span></a>
+                                                                href="{{ 'article/' . encrypt($perarticle->id) . '/edit' }}">
+                                                                <span
+                                                                    class="material-symbols-outlined text-yellow-600 dark:text-yellow-900 hover:opacity-80">edit</span>
+                                                            </a>
                                                         </td>
                                                     </tr>
                                                 @endforeach
-
-
-
                                             </tbody>
                                         </table>
                                     </div>

@@ -2,12 +2,12 @@
 @section('tool')
     <div class="container w-full h-full mt-4">
         <div
-            class="mt-4 p-4 table-container w-full max-h-full shadow-xl bg-white text-slate-600 dark:text-slate-300 dark:bg-slate-800 rounded-xl border-t-blue-500 border-t-4">
+            class="mt-4 p-4 table-container w-full min-h-full shadow-xl bg-white text-slate-600 dark:text-slate-300 dark:bg-slate-800 rounded-xl border-t-blue-500 border-t-4">
             <div class="flex flex-col h-full w-full">
                 <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                        <div class="overflow-hidden">
-                            <table class="min-w-full">
+                    <div class="py-2 inline-block min-w-full min-h-full sm:px-6 lg:px-8">
+                        <div class="overflow-hidden w-full h-full">
+                            <table class="min-w-full min-h-full">
                                 <thead class="border-b">
                                     <tr>
                                         <th scope="col" class="text-center align-middle text-sm font-medium  px-6 py-4">
@@ -29,11 +29,11 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($categories as $category)
+                                    @foreach ($categories as $key=> $category)
                                         <tr class="border-b transition duration-300 ease-in-out">
                                             <td
                                                 class="text-center align-middle px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                                {{ $category->id }}
+                                                {{ $key + 1 }}
                                             </td>
                                             <td id="categeryicons"
                                                 class="text-center flex items-center gap-1 align-middle text-sm cursor-pointer font-light px-6 py-4 whitespace-nowrap"

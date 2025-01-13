@@ -18,6 +18,38 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminAuthController extends Controller
 {
+    public function userRoleIndex()
+    {
+        // Ambil semua artikel atau data lain yang diperlukan
+        $articles = Article::all();
+        // Kamu bisa mendefinisikan $article sebagai artikel pertama, atau sesuai kebutuhan
+        $article = $articles->first();
+
+        // Mengirimkan data ke view
+        return view('custom.userrole', compact('articles', 'article'));
+    }
+
+
+
+    public function addUserRole(Request $request) {
+        // Validasi input role_name
+        $request->validate([
+            'role_name' => 'required|unique:user_roles,name'
+        ]);
+
+        // Menyimpan role baru ke dalam tabel user_roles
+        UserRole::create([
+            'name' => $request->role_name,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        // Tampilkan pesan sukses
+        Alert::success('Role Baru Berhasil Ditambahkan');
+
+        return redirect()->back();
+    }
+
     public function index(){
             return view('Auth.login');
     }

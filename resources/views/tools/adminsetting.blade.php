@@ -36,11 +36,11 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($user as $peruser)
+                                    @foreach ($user as $key => $peruser)
                                         <tr class="border-b transition duration-300 ease-in-out hover:bg-gray-100">
                                             <td
                                                 class="text-center align-middle px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                                {{ $peruser->id }}
+                                                {{ $key + 1 }}
                                             </td>
                                             <td class="text-center align-middle text-sm cursor-pointer font-light px-6 py-4 whitespace-nowrap"
                                                 title="">

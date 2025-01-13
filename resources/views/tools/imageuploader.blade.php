@@ -43,19 +43,19 @@
                                             <td class="text-sm h-full text-center  cursor-pointer font-light px-6 py-4 whitespace-nowrap"
                                                 title="">
                                                 <div class="image-cover h-12 w-18 overflow-hidden">
-                                                    <img src="http://127.0.0.1:8000/storage/image/{{ $image->url }}"
+                                                    <img src="http://aliwafa.id/storage/image/{{ $image->url }}"
                                                         alt="img" class="w-full h-full object-cover">
 
                                                 </div>
                                                 {{ $image->title }}
                                             </td>
                                             <td id="image-url"
-                                                title="http://127.0.0.1:8000/storage/image/{{ $image->url }}"
+                                                title="http://aliwafa.id/storage/image/{{ $image->url }}"
                                                 class="text-sm  font-light flex items-center gap-2 px-6 py-4 whitespace-nowrap">
                                                 <input
                                                     class="border-none outline-none focus:outline-none focus:border-none dark:bg-slate-700"
                                                     id="images-url" type="text"
-                                                    value="{{ 'http://127.0.0.1:8000/storage/image/' . $image->url }}">
+                                                    value="{{ 'http://aliwafa.id/storage/image/' . $image->url }}">
                                                 <span id="{{ $image->id }}"
                                                     class="material-symbols-outlined copy-button text-slate-600 dark:hover:bg-slate-500 dark:text-slate-200 cursor-pointer hover:bg-slate-200 p-2 rounded-full">
                                                     content_copy

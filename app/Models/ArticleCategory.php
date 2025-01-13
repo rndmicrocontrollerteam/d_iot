@@ -10,5 +10,4 @@ class ArticleCategory extends Model
 {
     use HasFactory;
     protected $table = "category_article";
-
 }
